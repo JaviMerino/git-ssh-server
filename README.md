@@ -59,8 +59,3 @@ Setup git-shell-commands
 
 Add your commands to the above directory. You might want to start with list, which
 you can find under `/usr/share/doc` on most git client machines.
-
-Notes
-=====
-
-The SSH host keys are generated at the first run of each new container. This will confuse some git clients and really should be changed.
