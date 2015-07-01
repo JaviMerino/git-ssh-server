@@ -4,7 +4,6 @@ ENV HOME /root
 ## Expose ports.
 EXPOSE 22
 
-## Application specific part
 MAINTAINER Javi Merino <merino.jav@gmail.com>
 WORKDIR /tmp
 RUN apt update && apt upgrade -y
