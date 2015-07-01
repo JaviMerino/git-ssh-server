@@ -13,7 +13,7 @@ CMD /usr/sbin/sshd -D
 ## Setup service
 # Setup a git user and SSH
 RUN groupadd -g 987 git
-RUN useradd -g git -u 987 -d /git -m -r -s /usr/bin/git-shell git
+RUN useradd -g git -u 987 -d /git -r -s /usr/bin/git-shell git
 RUN sed -i -e 's/.*LogLevel.*/LogLevel VERBOSE/' /etc/ssh/sshd_config
 RUN sed -i -e 's/#?UsePAM.*/UsePAM no/' /etc/ssh/sshd_config
 #Set a long random password to unlock the git user account
