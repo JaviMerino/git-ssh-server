@@ -18,9 +18,6 @@ RUN sed -i -e 's/#?UsePAM.*/UsePAM no/' /etc/ssh/sshd_config
 #Set a long random password to unlock the git user account
 RUN usermod -p `dd if=/dev/urandom bs=1 count=30 | uuencode -m - | head -2 | tail -1` git
 
-## Remove /etc/motd
-RUN rm -rf /etc/update-motd.d /etc/motd /etc/motd.dynamic 
-RUN ln -fs /dev/null /run/motd.dynamic
 
 ## Clean up
 WORKDIR /
