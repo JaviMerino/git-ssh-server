@@ -9,7 +9,7 @@ CMD ["/sbin/my_init"]
 EXPOSE 22
 
 ## Application specific part
-MAINTAINER Stephen Day <sd@unixtastic.com>
+MAINTAINER Javi Merino <merino.jav@gmail.com>
 WORKDIR /tmp
 RUN apt-get -qq update && apt-get -qq upgrade
 RUN apt-get -qq install git-sh git sharutils

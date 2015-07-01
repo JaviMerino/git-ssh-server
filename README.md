@@ -6,8 +6,8 @@ A minimal GIT server.
 Build instructions
 ==================
 
-    git clone https://github.com/unixtastic/git-ssh-server
-    docker build -t 'unixtastic/git-ssh-server' .
+    git clone https://github.com/JaviMerino/git-ssh-server.git
+    docker build -t git-ssh-server .
 
 Usage instructions
 ==================
