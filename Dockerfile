@@ -7,7 +7,7 @@ EXPOSE 22
 MAINTAINER Javi Merino <merino.jav@gmail.com>
 WORKDIR /tmp
 RUN apt update && apt upgrade -y
-RUN apt install -y ssh git-sh git sharutils
+RUN apt install -y ssh git-sh git
 CMD /usr/sbin/sshd -D
 
 ## Setup service
@@ -16,8 +16,6 @@ RUN groupadd -g 987 git
 RUN useradd -g git -u 987 --home-dir /git --system --shell /usr/bin/git-shell git
 RUN sed -i -e 's/.*LogLevel.*/LogLevel VERBOSE/' /etc/ssh/sshd_config
 RUN sed -i -e 's/#?UsePAM.*/UsePAM no/' /etc/ssh/sshd_config
-#Set a long random password to unlock the git user account
-RUN usermod -p `dd if=/dev/urandom bs=1 count=30 | uuencode -m - | head -2 | tail -1` git
 
 # Create PrivSep directory
 RUN mkdir /var/run/sshd && chmod 0755 /var/run/sshd
