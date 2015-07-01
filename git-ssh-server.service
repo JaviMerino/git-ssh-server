@@ -1,0 +1,8 @@
+[Unit]
+Requires=network.target
+After=network.target
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker run --rm --name git-ssh-server -p 2222:22 -v /srv/git_ssh_server:/git git-ssh-server
+ExecStop=/usr/bin/docker stop -t 5 git-ssh-server
