@@ -25,4 +25,3 @@ RUN ln -fs /dev/null /run/motd.dynamic
 ## Clean up
 WORKDIR /
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
