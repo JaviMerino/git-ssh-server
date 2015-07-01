@@ -7,8 +7,8 @@ EXPOSE 22
 ## Application specific part
 MAINTAINER Javi Merino <merino.jav@gmail.com>
 WORKDIR /tmp
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y ssh git-sh git sharutils
+RUN apt update && apt upgrade -y
+RUN apt install -y ssh git-sh git sharutils
 CMD /usr/sbin/sshd -D
 
 ## Setup service
