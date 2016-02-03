@@ -6,7 +6,6 @@ EXPOSE 22
 
 MAINTAINER Javi Merino <merino.jav@gmail.com>
 WORKDIR /tmp
-RUN apt update && apt upgrade -y
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y ssh git-sh git
 CMD /usr/sbin/sshd -D
